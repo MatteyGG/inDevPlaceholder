@@ -18,7 +18,9 @@ declare global {
       defaultLanguage: string;
     };
   }
-}
+} 
+
+
 
 const LanguageSwitcher = () => {
   const [currentLanguage, setCurrentLanguage] = useState<string>();
