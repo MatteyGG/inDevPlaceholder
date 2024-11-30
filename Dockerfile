@@ -6,7 +6,7 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 
 
-RUN npm install --frozen-lockfile
+RUN npm install
 
 # Stage 2: Build the application
 FROM base AS builder
