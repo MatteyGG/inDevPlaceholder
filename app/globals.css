@@ -20,6 +20,24 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.skiptranslate{
-  display: none !important
+.skiptranslate iframe, indicator{
+  @apply hidden
+}
+
+.goog-te-gadget-simple, .google_translate_element {
+  @apply w-24 bg-slate-500 hover:scale-125 hover:translate-x-4 ease-in-out duration-200 delay-150
+}
+.goog-te-gadget-simple img{
+  @apply hidden
+}
+
+.goog-te-gadget-simple span{
+  @apply inline-flex h-auto
+}
+.goog-te-gadget-simple table{
+  @apply inline-flex text-base w-full
+}
+
+.goog-gt-vt{
+  @apply hidden
 }

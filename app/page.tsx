@@ -1,9 +1,7 @@
 'use client'
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
-
-const text1 = "🚧Page in Development";
+import { useEffect } from "react";
 
 export default function Home() {
   useEffect(() => {
@@ -13,34 +11,35 @@ export default function Home() {
         "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
       script.async = true;
       document.body.appendChild(script);
-
-      window.googleTranslateElementInit = () => {
-        new window.google.translate.TranslateElement(
+/* eslint-disable @next/next/no-unwanted-polyfillio */
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (window as any).googleTranslateElementInit = () => {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        new (window as any).google.translate.TranslateElement(
           {
             pageLanguage: "en", // Укажите язык оригинального контента
-            includedLanguages: "en,es,fr,de,ru", // Языки перевода
+            includedLanguages: "en,es,fr,de,ru,ti", // Языки перевода
             layout:
-              window.google.translate.TranslateElement.InlineLayout.SIMPLE,
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              (window as any).google.translate.TranslateElement.InlineLayout
+                .SIMPLE,
           },
           "google_translate_element"
         );
       };
     };
-
     addGoogleTranslateScript();
   }, []);
 
-  const [language, setLanguage] = useState("en");
-
   return (
     <div className="flex min-h-screen flex-col items-center justify-center">
-      <nav>
-        <div id="w-full google_translate_element"></div>
-
-        <select value={language} onChange={(e) => setLanguage(e.target.value)}>
-          <option value="en">EN</option>
-          <option value="ru">RU</option>
-        </select>
+      <nav className=" absolute right-0 top-0 ">
+        <div id="google_translate_element"></div>
+        <div
+          id="google_translate_element"
+          className="google_trans"
+        ></div>
       </nav>
       <main className="flex flex-col container items-center justify-center gap-6">
         <div className="w-1/2">
@@ -53,7 +52,7 @@ export default function Home() {
           />
         </div>
         <div>
-          <h1 className="text-4xl font-bold">{text1}</h1>
+          <h1 className="text-4xl font-bold">🚧Page in Development</h1>
           <p className="text-center text-gray-400">
             This page is currently under development. Please check back later
             for updates.
