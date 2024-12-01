@@ -1,6 +1,7 @@
 'use client'
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect } from "react";
 
 export default function Home() {
@@ -33,16 +34,13 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center mx-auto">
       <nav className=" absolute right-0 top-0 ">
         <div id="google_translate_element"></div>
-        <div
-          id="google_translate_element"
-          className="google_trans"
-        ></div>
+        <div id="google_translate_element" className="google_trans"></div>
       </nav>
       <main className="flex flex-col container items-center justify-center gap-6">
-        <div className="w-1/2">
+        <div className="w-1/3">
           <Image
             className=" object-fill"
             src="/Stasis_logo.png"
@@ -52,12 +50,44 @@ export default function Home() {
           />
         </div>
         <div>
-          <h1 className="text-4xl font-bold">🚧Page in Development</h1>
+          <h1 className="text-center text-2xl md:text-4xl font-bold text-nowrap">
+            🚧Страница в разработке
+          </h1>
           <p className="text-center text-gray-400">
-            This page is currently under development. Please check back later
-            for updates.
+            Эта страница в настоящее время находится в разработке. Пожалуйста,
+            зайдите позже для получения обновлений.
           </p>
         </div>
+        <article className=" w-full p-2">
+          <h1 className="text-2xl font-bold text-center">Немного о нас</h1>
+          <p className="mx-3 mt-2 text-pretty subpixel-antialiased tracking-wide">
+            <span>
+              Стазис — международный альянс, в основном состоящий из
+              русскоязычных игроков. Мы ценим общение и часто общаемся в
+              голосовом чате — не только по игре, но и для приятного
+              времяпрепровождения.
+            </span>
+            <br />
+            <span>
+              Наши игроки имеют опыт более года, что помогает нам уверенно
+              справляться с любыми задачами. Мы любим сражаться, но также
+              понимаем важность дипломатии. В нашем альянсе открыты к новым
+              идеям и множеству точек зрения.
+            </span>
+            <br />
+            <span>
+              Мы всегда готовы поддержать интересные предложения, чтобы сделать
+              наше сообщество ещё сильнее и интереснее. Присоединяйтесь к нам и
+              станьте частью дружной команды!
+            </span>
+          </p>
+        </article>
+        <Link
+          className="p-4 bg-pretty text-white border rounded-md"
+          href="https://forms.gle/3oamsm6nqRrmSNrr5"
+        >
+          Присоединится
+        </Link>
       </main>
       <footer className="flex h-24 w-full items-center justify-center bottom-0">
         <a
