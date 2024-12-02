@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
 
+
 export default function Home() {
   useEffect(() => {
     const addGoogleTranslateScript = () => {
@@ -86,7 +87,7 @@ export default function Home() {
           className="p-4 bg-pretty text-white border rounded-md"
           href="https://forms.gle/3oamsm6nqRrmSNrr5"
         >
-          Присоединится
+          Заполнить Google Form
         </Link>
       </main>
       <footer className="flex h-24 w-full items-center justify-center bottom-0">
