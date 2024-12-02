@@ -1,15 +1,4 @@
 services:
-  web:
-    image: ghcr.io/matteygg/stasis-indev:latest
-    ports:
-      - '3000:3000'
-    environment:
-      - NODE_ENV=production
-    depends_on:
-      - db
-    networks:
-      - my_network
-
   db:
     image: postgres:latest
     environment:
@@ -22,6 +11,16 @@ services:
       - postgres_data:/var/lib/postgresql/data
     networks:
       - my_network
+  web:
+    image: ghcr.io/matteygg/stasis-indev:latest
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=production
+    depends_on:
+      - db
+    networks:
+      - my_network  
 
 volumes:
   postgres_data:
